@@ -3,52 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Aniversário Letícia</title>
+    <title>Feliz Aniversário Letícia!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
+        /* Resetando margens e fontes */
+        * {
             margin: 0;
-            font-family: 'Arial', sans-serif;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom right, #ffccff, #ff99cc);
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background: linear-gradient(to bottom right, #ffccff, #ff99cc);
             overflow: hidden;
-        }
-        .container {
             text-align: center;
-            color: #ffffff;
-            opacity: 0;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 80%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.1);
             animation: fadeIn 2s forwards;
         }
+
         h1 {
-            margin: 20px;
-            font-size: 2rem;
-            animation: fadeIn 2s forwards;
+            font-family: 'Pacifico', cursive;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6);
+            animation: bounceIn 1s ease-out;
         }
+
         p {
-            font-size: 1.5rem;
-            margin-top: 20px;
-            animation: fadeIn 3s forwards;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            line-height: 1.5;
+            opacity: 0;
+            animation: fadeInText 2s forwards;
         }
+
         .arrow {
-            font-size: 2rem;
-            cursor: pointer;
-            color: #ffffff;
+            font-size: 2.5rem;
             margin-top: 30px;
+            cursor: pointer;
+            transition: transform 0.3s;
             opacity: 0;
             animation: fadeIn 2s forwards 2s, bounce 1.5s infinite 4s;
         }
+
+        .arrow:hover {
+            transform: scale(1.2);
+        }
+
         .hidden {
             display: none;
         }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
+        @keyframes fadeInText {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: translateY(-30px); opacity: 0; }
+            60% { transform: translateY(10px); opacity: 1; }
+            100% { transform: translateY(0); }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .arrow {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -64,7 +114,7 @@
     <div class="container hidden" id="step3">
         <h1>Feliz Aniversário Letícia! 🎉</h1>
         <p>Hoje é um dia muito especial, e eu quero aproveitar para te desejar tudo de melhor! Que os seus 15 anos sejam cheios de momentos incríveis, de aprendizados e de muita felicidade. Você merece conquistar tudo o que sonha e muito mais.</p>
-        <p>Desde 2018, nossa amizade só cresceu, e é um privilégio poder comemorar esse momento com você. Que essa nova fase da sua vida seja repleta de novas aventuras, risos, e sucesso em tudo o que você fizer.</p>
+        <p>Desde 2018, nossa amizade só cresceu, e é um privilégio poder comemorar esse momento com você. Que essa nova fase da sua vida seja repleta de novas aventuras, risos e sucesso em tudo o que você fizer.</p>
         <p>Parabéns, Letícia! Que você continue sendo essa pessoa maravilhosa e cheia de luz. Te desejo um futuro brilhante e uma vida cheia de amor e conquistas! 🥳💖</p>
     </div>
 
