@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário Letícia</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #ffccff, #ff99cc);
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            color: #ffffff;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        h1 {
+            margin: 20px;
+            font-size: 2rem;
+            animation: fadeIn 2s forwards;
+        }
+        p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            animation: fadeIn 3s forwards;
+        }
+        .arrow {
+            font-size: 2rem;
+            cursor: pointer;
+            color: #ffffff;
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeIn 2s forwards 2s, bounce 1.5s infinite 4s;
+        }
+        .hidden {
+            display: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="step1">
+        <h1>Este site foi desenvolvido por Guilherme Lamon</h1>
+        <div class="arrow" onclick="nextStep(1)">➡️</div>
+    </div>
+    <div class="container hidden" id="step2">
+        <h1>Criei este site para te desejar feliz aniversário com minhas sinceras palavras</h1>
+        <div class="arrow" onclick="nextStep(2)">➡️</div>
+    </div>
+    <div class="container hidden" id="step3">
+        <h1>Feliz Aniversário Letícia! 🎉</h1>
+        <p>Hoje é um dia muito especial, e eu quero aproveitar para te desejar tudo de melhor! Que os seus 15 anos sejam cheios de momentos incríveis, de aprendizados e de muita felicidade. Você merece conquistar tudo o que sonha e muito mais.</p>
+        <p>Desde 2018, nossa amizade só cresceu, e é um privilégio poder comemorar esse momento com você. Que essa nova fase da sua vida seja repleta de novas aventuras, risos, e sucesso em tudo o que você fizer.</p>
+        <p>Parabéns, Letícia! Que você continue sendo essa pessoa maravilhosa e cheia de luz. Te desejo um futuro brilhante e uma vida cheia de amor e conquistas! 🥳💖</p>
+    </div>
+
+    <script>
+        function nextStep(currentStep) {
+            const current = document.getElementById(`step${currentStep}`);
+            const next = document.getElementById(`step${currentStep + 1}`);
+            if (current) current.classList.add('hidden');
+            if (next) next.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
